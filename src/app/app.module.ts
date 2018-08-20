@@ -7,6 +7,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { RequestProvider } from '../providers/request/request';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { HttpModule } from '@angular/http';
+import { AdMobFree } from '@ionic-native/admob-free';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +20,8 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -22,9 +29,12 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    AdMobFree,
+    SocialSharing,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RequestProvider
   ]
 })
 export class AppModule {}

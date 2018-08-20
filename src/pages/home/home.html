@@ -1,14 +1,145 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <img src="assets/imgs/share.svg">
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-content >
+  
+    <div [ngSwitch]="choice">
+        <ion-list *ngSwitchCase="'cat1'">
+          <ion-item *ngFor="let image of img1">
+            
+            <img src="{{image.link}}">
+            <div id="socialSharing">
+                    <ion-grid>
+                            <ion-row>
+                                <ion-col>
+                                    
+                                        <button (click)="click()" >
+                                        <img (click)="facebook(image.link)" src="assets/imgs/facebook.svg">
+                                         </button>
+                                </ion-col>
+                                <ion-col>
+                                        <button  (click)="click()" >
+                                        <img (click)="messenger(image.link)" src="assets/imgs/Facebook_Messenger_logo.svg">
+                                        </button>
+                                </ion-col>
+                                <ion-col>
+                                        <button  (click)="click()" >
+                                        <img (click)="instagram(image.link)" src="assets/imgs/instagram.svg">
+                                        </button>
+                                </ion-col>
+                                <ion-col>
+                                        <button  (click)="click()" >
+                                        <img (click)="whatsapp(image.link)" src="assets/imgs/whatsapp.svg">
+                                        </button>
+                                </ion-col>
+                            </ion-row>
+                    </ion-grid>
+            </div>
+  
+          </ion-item>
+        </ion-list>
+  
+        <ion-list *ngSwitchCase="'cat2'">
+            <ion-item *ngFor="let image of img2">
+  
+                        <img src="{{image.link}}">
+                        <div id="socialSharing">
+                                <ion-grid>
+                                        <ion-row>
+                                            <ion-col>
+                                                
+                                                    <button (click)="click()" >
+                                                    <img (click)="facebook(image.link)" src="assets/imgs/facebook.svg">
+                                                     </button>
+                                            </ion-col>
+                                            <ion-col>
+                                                    <button  (click)="click()" >
+                                                    <img (click)="messenger(image.link)" src="assets/imgs/Facebook_Messenger_logo.svg">
+                                                    </button>
+                                            </ion-col>
+                                            <ion-col>
+                                                    <button  (click)="click()" >
+                                                    <img (click)="instagram(image.link)" src="assets/imgs/instagram.svg">
+                                                    </button>
+                                            </ion-col>
+                                            <ion-col>
+                                                    <button  (click)="click()" >
+                                                    <img (click)="whatsapp(image.link)" src="assets/imgs/whatsapp.svg">
+                                                    </button>
+                                            </ion-col>
+                                        </ion-row>
+                                </ion-grid>
+                        </div>
+  
+                  
+            </ion-item>
+        </ion-list>
+        
+        <ion-list *ngSwitchCase="'cat3'">
+            <ion-item *ngFor="let image of img3">
+  
+                        <img src="{{image.link}}">
+                        <div id="socialSharing">
+                                <ion-grid>
+                                        <ion-row>
+                                            <ion-col>
+                                                
+                                                    <button (click)="click()" >
+                                                    <img (click)="facebook(image.link)" src="assets/imgs/facebook.svg">
+                                                     </button>
+                                            </ion-col>
+                                            <ion-col>
+                                                    <button  (click)="click()" >
+                                                    <img (click)="messenger(image.link)" src="assets/imgs/Facebook_Messenger_logo.svg">
+                                                    </button>
+                                            </ion-col>
+                                            <ion-col>
+                                                    <button  (click)="click()" >
+                                                    <img (click)="instagram(image.link)" src="assets/imgs/instagram.svg">
+                                                    </button>
+                                            </ion-col>
+                                            <ion-col>
+                                                    <button  (click)="click()" >
+                                                    <img (click)="whatsapp(image.link)" src="assets/imgs/whatsapp.svg">
+                                                    </button>
+                                            </ion-col>
+                                        </ion-row>
+                                </ion-grid>
+                        </div>
+  
+            </ion-item>
+        </ion-list>
+  
+    </div>    
+    
+  
+  </ion-content>
+  
+  <ion-footer>
+  
+    <ion-toolbar >
+        <ion-segment [(ngModel)]="choice" >
+  
+            <ion-segment-button value="cat1">
+                    {{cat1}}
+            </ion-segment-button>
+  
+            <ion-segment-button value="cat2">
+                    {{cat2}}
+                
+            </ion-segment-button>
+  
+            <ion-segment-button value="cat3">
+                    {{cat3}}
+                
+            </ion-segment-button>
+  
+        </ion-segment>
+    </ion-toolbar>
+  
+  </ion-footer>
